@@ -19,7 +19,7 @@ public class KittensParameterizedTest {
     }
 
     @Parameterized.Parameters
-    public static Object[][] getTestData() {
+    public static Object[][] getKittensCountData() {
         return new Object[][]{
                 {1, 1},
                 {0, 0},
