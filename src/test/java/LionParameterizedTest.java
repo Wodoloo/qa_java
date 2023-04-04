@@ -10,9 +10,8 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class LionParameterizedTest {
-    //@Parameterized.Parameter
+
     public String sex;
-    // @Parameterized.Parameter(1)
     public boolean expected;
 
     @Before
@@ -22,7 +21,6 @@ public class LionParameterizedTest {
 
     @Mock
     Feline felineMock;
-
 
     public LionParameterizedTest(boolean expected, String sex) {
         this.expected = expected;
@@ -39,7 +37,7 @@ public class LionParameterizedTest {
 
     @Test
     public void doesHaveMane() throws Exception {
-        Lion lion = new Lion(felineMock, sex);
+        Lion lion = new Lion(sex, felineMock);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, actual);
     }

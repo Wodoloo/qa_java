@@ -3,13 +3,11 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import com.example.Feline;
 import com.example.Lion;
-import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import java.util.Arrays;
 import java.util.List;
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -19,11 +17,12 @@ public class LionTest {
     Feline mockFeline;
 
     @Test
-    public void doesHaveManeTest() throws Exception {
+    public void getKittensTest() throws Exception {
         Lion lion = new Lion("Самец", mockFeline);
-        boolean expected = true;
-        boolean actual = lion.doesHaveMane();
-        MatcherAssert.assertThat(actual, is(expected));
+        Mockito.when(mockFeline.getKittens()).thenReturn(1);
+        int expected = 1;
+        int actual= lion.getKittens();
+        assertEquals(expected, actual);
     }
 
     @Test

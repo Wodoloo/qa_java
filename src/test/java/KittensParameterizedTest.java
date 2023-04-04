@@ -34,7 +34,7 @@ public class KittensParameterizedTest {
     }
 
     @Test
-    public void KittensReturnsCorrectCount() {
+    public void kittensReturnsCorrectCount() {
         Feline feline = new Feline();
         int actual = feline.getKittens(kittensCount);
         MatcherAssert.assertThat(actual, is(expected));
